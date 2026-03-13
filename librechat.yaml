@@ -49,6 +49,3 @@ interface:
   termsOfService:
     externalUrl: 'https://librechat.ai/tos'
     openInNewTab: true
-
-admin:
-  admingroupName: "Admin"
