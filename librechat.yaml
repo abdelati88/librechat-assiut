@@ -1,0 +1,20 @@
+version: 1.2.1
+cache: true
+endpoints:
+  openai:
+    titleModel: "ChatGPT"
+    apiKey: "user_provided"
+  google:
+    titleModel: "Gemini"
+    apiKey: "user_provided"
+  custom:
+    - name: "OpenRouter"
+      apiKey: "user_provided"
+      baseURL: "https://openrouter.ai/api/v1"
+      models:
+        default: ["google/gemini-2.0-flash-001", "anthropic/claude-3.5-sonnet", "openai/gpt-4o", "meta-llama/llama-3.3-70b-instruct", "mistralai/mistral-7b-instruct"]
+        fetch: true
+      titleConvo: true
+      titleModel: "google/gemini-2.0-flash-001"
+      modelDisplayLabel: "OpenRouter"
+      dropParams: ["stop"]
