@@ -74,6 +74,16 @@ services:
       - vectordb
     env_file:
       - .env
+  admin-dashboard:
+    build: https://github.com/innFactory/librechat-admin-dashboard.git#main
+    container_name: librechat-admin-dashboard
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/LibreChat
+      - MONGODB_DB_NAME=LibreChat
+      - DASHBOARD_PASSWORD=${DASHBOARD_PASSWORD}
+    restart: always
+    depends_on:
+      - mongodb
 
 volumes:
   pgdata2:
