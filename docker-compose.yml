@@ -80,9 +80,13 @@ services:
       - MONGODB_URI=mongodb://mongodb:27017/LibreChat
       - MONGODB_DB_NAME=LibreChat
       - DASHBOARD_PASSWORD=${DASHBOARD_PASSWORD}
+      # الـ 3 سطور الجداد لحل مشكلة الـ 401 والشاشة البيضاء
+      - NEXTAUTH_URL=https://admin-ai.qraura.shop/dashboard
+      - NEXTAUTH_SECRET=AuraQrSuperSecretKey2026!
+      - SESSION_SECRET=AuraQrSuperSecretKey2026!
     restart: always
     depends_on:
       - mongodb
-
+      
 volumes:
   pgdata2:
