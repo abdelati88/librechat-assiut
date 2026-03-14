@@ -8,6 +8,8 @@ endpoints:
       baseURL: "https://openrouter.ai/api/v1"
       models:
         default: [
+          "anthropic/claude-4.7-sonnet",
+          "anthropic/claude-4.6-opus",
           "anthropic/claude-3.7-sonnet",
           "anthropic/claude-3.5-sonnet",
           "anthropic/claude-3-opus",
@@ -61,7 +63,7 @@ interface:
 
 mcpServers:
   github:
-    type: builtin
+    type: stdio
     command: npx
     args: ["-y", "@modelcontextprotocol/server-github"]
     env:
