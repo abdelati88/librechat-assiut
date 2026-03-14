@@ -8,22 +8,20 @@ endpoints:
       baseURL: "https://openrouter.ai/api/v1"
       models:
         default: [
-          "anthropic/claude-4.7-sonnet",
-          "anthropic/claude-4.6-opus",
           "anthropic/claude-3.7-sonnet",
           "anthropic/claude-3.5-sonnet",
           "anthropic/claude-3-opus",
-          "google/gemini-2.0-flash-001",
           "google/gemini-2.5-pro",
+          "google/gemini-2.0-flash-001",
+          "google/gemini-1.5-pro",
           "openai/gpt-4o",
-          "openai/gpt-4-turbo",
+          "openai/gpt-4o-mini",
           "openai/o1",
           "openai/o3-mini",
           "meta-llama/llama-3.3-70b-instruct",
           "meta-llama/llama-3.1-405b-instruct",
           "deepseek/deepseek-r1",
-          "deepseek/deepseek-chat",
-          "mistralai/mistral-large-2411"
+          "deepseek/deepseek-chat"
         ]
         fetch: true
       titleConvo: true
@@ -33,13 +31,24 @@ endpoints:
       apiKey: "user_provided"
       baseURL: "https://api.openai.com/v1"
       models:
-        default: ["gpt-4o", "gpt-4-turbo", "gpt-3.5-turbo"]
+        default: [
+          "gpt-4o",
+          "gpt-4o-mini",
+          "o1",
+          "o3-mini",
+          "gpt-4-turbo"
+        ]
         fetch: true
     - name: "Gemini (Google)"
       apiKey: "user_provided"
       baseURL: "https://generativelanguage.googleapis.com/v1beta/openai/"
       models:
-        default: ["gemini-pro", "gemini-1.5-flash"]
+        default: [
+          "gemini-2.5-pro",
+          "gemini-2.0-flash",
+          "gemini-1.5-pro",
+          "gemini-1.5-flash"
+        ]
         fetch: true
 
 interface:
@@ -49,3 +58,11 @@ interface:
   termsOfService:
     externalUrl: 'https://librechat.ai/tos'
     openInNewTab: true
+
+mcpServers:
+  github:
+    type: builtin
+    command: npx
+    args: ["-y", "@modelcontextprotocol/server-github"]
+    env:
+      GITHUB_PERSONAL_ACCESS_TOKEN: "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"
