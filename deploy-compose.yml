@@ -26,6 +26,7 @@ services:
       - RAG_API_URL=http://rag_api:${RAG_PORT:-8000}
       - ADMIN_EMAIL=mohamedabdelatti30@gmail.com
       - ALLOW_ADMIN_REGISTRATION=true
+      - GITHUB_PERSONAL_ACCESS_TOKEN=${GITHUB_PERSONAL_ACCESS_TOKEN}
     volumes:
       - type: bind
         source: ./librechat.yaml
