@@ -67,4 +67,4 @@ mcpServers:
     command: npx
     args: ["-y", "@modelcontextprotocol/server-github"]
     env:
-      GITHUB_PERSONAL_ACCESS_TOKEN: "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"
+      GITHUB_PERSONAL_ACCESS_TOKEN: "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"
