@@ -24,7 +24,7 @@ services:
       - MEILI_HOST=http://meilisearch:7700
       - RAG_PORT=${RAG_PORT:-8000}
       - RAG_API_URL=http://rag_api:${RAG_PORT:-8000}
-      - ADMIN_EMAIL=mohamedabdelatti30@gmail.com
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
       - ALLOW_ADMIN_REGISTRATION=true
       - GITHUB_PERSONAL_ACCESS_TOKEN=${GITHUB_PERSONAL_ACCESS_TOKEN}
     volumes:
@@ -73,8 +73,8 @@ services:
     image: ankane/pgvector:latest
     environment:
       POSTGRES_DB: mydatabase
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     restart: always
     volumes:
       - pgdata2:/var/lib/postgresql/data
